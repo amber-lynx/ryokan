@@ -25,8 +25,35 @@ footer{text-align:center;margin:40px 0 20px;font-size:12px;color:#666;}
 </header>
 
 <main>
-<form id="reservationForm" action="https://formspree.io/f/your-form-id" method="POST">
+<form id="reservationForm" action="https://formspree.io/f/xwvnlpbd" method="POST">
 
+  <input type="hidden" name="_redirect" value="https://あなたのユーザー名.github.io/complete.html">
+
+  <label>お名前</label><br>
+  <input type="text" name="name" required><br><br>
+
+  <label>メールアドレス</label><br>
+  <input type="email" name="email" required><br><br>
+
+  <label>宿泊日</label><br>
+  <input type="date" name="date" required><br><br>
+
+  <label>ご宿泊人数</label><br>
+  <input type="number" name="guests" min="1" max="10" required><br><br>
+
+  <label>お部屋</label><br>
+  <select name="room" required>
+    <option value="春の間">春の間</option>
+    <option value="月影の間">月影の間</option>
+    <option value="翠の間">翠の間</option>
+    <option value="宵闇の間">宵闇の間</option>
+    <option value="記憶の間">記憶の間</option>
+    <option value="桜灯の間">桜灯の間</option>
+  </select><br><br>
+
+  <button type="submit">予約する</button>
+
+</form>
 <label>お名前
 <input type="text" name="name" required>
 </label>
