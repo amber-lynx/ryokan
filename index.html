@@ -3,129 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>隠れ宿 黄昏の澱 公式サイト</title>
+<title>ご予約 | 旅館 黄昏の澱</title>
 <style>
-body{
-    margin:0;
-    font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
-    background:#0e0e12;
-    color:#e8e8ea;
-}
-header{
-    height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),url('https://images.unsplash.com/photo-1505691723518-36a5ac3be353?q=80&w=1974&auto=format&fit=crop');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
-header h1{
-    font-size:3rem;
-    letter-spacing:0.3em;
-}
-header p{
-    opacity:0.8;
-}
-section{
-    padding:80px 10%;
-}
-.section-dark{
-    background:#14141a;
-}
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
-.card{
-    background:#1b1b22;
-    padding:20px;
-    border-radius:8px;
-    box-shadow:0 0 20px rgba(0,0,0,0.4);
-}
-footer{
-    background:#0a0a0d;
-    text-align:center;
-    padding:30px;
-    font-size:0.8rem;
-    opacity:0.6;
-}
-a{
-    color:#c8a96b;
-    text-decoration:none;
-}
-.notice{
-    margin-top:40px;
-    font-size:0.8rem;
-    opacity:0.5;
-}
+body{margin:0;font-family:"Hiragino Mincho ProN",serif;background:#f7f7f7;color:#333;}
+header{background:#ffffff;padding:20px;text-align:center;border-bottom:1px solid #ddd;}
+h1{margin:0;font-size:24px;}
+main{max-width:600px;margin:40px auto;padding:20px;background:#ffffff;border:1px solid #ddd;border-radius:6px;}
+label{display:block;margin-top:15px;font-size:14px;}
+input,select,textarea{width:100%;padding:8px;margin-top:5px;border:1px solid #ccc;border-radius:4px;font-size:14px;}
+button{margin-top:20px;padding:10px;width:100%;background:#4a6fa5;border:none;color:#fff;cursor:pointer;border-radius:4px;font-size:15px;}
+button:hover{background:#3b5c8a;}
+footer{text-align:center;margin:40px 0 20px;font-size:12px;color:#666;}
+.notice{margin-top:10px;font-size:12px;color:#777;}
+.hidden{display:none;}
 </style>
 </head>
 <body>
 
 <header>
-    <h1>隠れ宿 黄昏の澱</h1>
-    <p>静寂の奥に、もう一つの夜がある。</p>
-    <a href="#reserve">ご予約はこちら</a>
+<h1>旅館 黄昏の澱　ご予約フォーム</h1>
 </header>
 
-<section>
-    <h2>当館について</h2>
-    <p>
-    山深い地に佇む、全8室の小さな隠れ宿。
-    都会の喧騒を忘れ、ゆるやかな時間をお過ごしください。
-    
-    客室はすべて和室。
-    窓の外には、霧に包まれた森が広がります。
-    </p>
-</section>
+<main>
+<form id="reservationForm" action="https://formspree.io/f/your-form-id" method="POST">
 
-<section class="section-dark">
-    <h2>客室案内</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>202号室</h3>
-            <p>落ち着いた十畳の和室。静かな夜をお約束します。</p>
-        </div>
-        <div class="card">
-            <h3>203号室</h3>
-            <p>森に最も近い部屋。夜は風の音が響きます。</p>
-        </div>
-        <div class="card">
-            <h3>204号室</h3>
-            <p>現在、調整中です。</p>
-        </div>
-    </div>
-</section>
+<label>お名前
+<input type="text" name="name" required>
+</label>
 
-<section>
-    <h2>温泉</h2>
-    <p>
-    源泉かけ流しの天然温泉。
-    深夜もご利用いただけます。
-    ※午前2時〜3時は清掃のためご利用いただけません。
-    </p>
-</section>
+<label>メールアドレス
+<input type="email" name="email" required>
+</label>
 
-<section id="reserve" class="section-dark">
-    <h2>ご予約</h2>
-    <p>
-    ご宿泊のご予約はお電話、または専用フォームより承っております。
-    </p>
-    <p>
-    TEL：000-0000-0000
-    </p>
-    <p class="notice">
-    ※当館では、お客様の「過去のご宿泊履歴」を大切に保管しております。
-    </p>
-</section>
+<label>ご宿泊日
+<input type="date" name="date" required>
+</label>
+
+<label>ご希望のお部屋
+<select name="room" id="roomSelect" required>
+<option value="">選択してください</option>
+<option value="tsuki">月影の間</option>
+<option value="kaze">風渡りの間</option>
+<option value="mori">森囁きの間</option>
+<option value="yami">宵闇の間</option>
+<option value="shizuku">雫の間</option>
+<option value="kioku">記憶の間</option>
+</select>
+</label>
+
+<div id="extraNote" class="hidden">
+<label>※特別なお部屋をご選択いただきました。確認事項をご入力ください。
+<textarea name="special_note" rows="3"></textarea>
+</label>
+</div>
+
+<label>ご要望
+<textarea name="message" rows="4"></textarea>
+</label>
+
+<button type="submit">予約を送信する</button>
+
+<p class="notice">※送信後、自動返信メールが届きます。</p>
+
+</form>
+</main>
 
 <footer>
-    © 2026 隠れ宿 黄昏の澱
+© 旅館 黄昏の澱
 </footer>
+
+<script>
+const form = document.getElementById('reservationForm');
+const roomSelect = document.getElementById('roomSelect');
+const extraNote = document.getElementById('extraNote');
+
+// 特定の部屋で挙動を変える
+roomSelect.addEventListener('change', function() {
+  if (roomSelect.value === 'kioku' || roomSelect.value === 'yami') {
+    extraNote.classList.remove('hidden');
+  } else {
+    extraNote.classList.add('hidden');
+  }
+});
+
+// 送信後の遷移処理
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const data = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+
+  if (response.ok) {
+    // 通常は健全な完了ページへ
+    if (roomSelect.value === 'kioku') {
+      window.location.href = 'complete_special.html';
+    } else {
+      window.location.href = 'complete.html';
+    }
+  } else {
+    alert('送信に失敗しました。もう一度お試しください。');
+  }
+});
+</script>
 
 </body>
 </html>
