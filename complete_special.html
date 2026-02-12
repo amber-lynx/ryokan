@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ご予約完了</title>
+<style>
+body {
+    font-family: "Hiragino Mincho ProN", serif;
+    background-color: #111;
+    color: #ddd;
+    text-align: center;
+    padding: 80px;
+}
+
+.container {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}
+
+h1 {
+    color: #b33;
+    letter-spacing: 3px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 2;
+}
+
+.glitch {
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #ddd;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+a:hover {
+    background-color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1 class="glitch">ご予約は受理されました</h1>
+
+    <p>
+        確かに、あなたのご予約を記録しました。
+    </p>
+
+    <p class="glitch">
+        お部屋は、すでにご用意されています。
+    </p>
+
+    <p>
+        ……お帰りを、お待ちしております。
+    </p>
+
+    <a href="index.html">戻る</a>
+</div>
+
+</body>
+</html>
