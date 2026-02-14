@@ -16,8 +16,7 @@ text-align:center;
 .hero{
 height:70vh;
 background-size:cover;
-background-position:center;
-position:relative;
+background-position:center center;
 }
 
 .hero::after{
