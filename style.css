@@ -14,38 +14,73 @@ text-align:center;
 }
 
 .hero{
-height:60vh;
+height:70vh;
 background-size:cover;
 background-position:center;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.3);
 }
 
 .section{
-padding:60px 20px;
-max-width:900px;
+padding:80px 20px;
+max-width:1100px;
 margin:auto;
 }
 
 h2{
 border-bottom:2px solid #6b4f3f;
 padding-bottom:10px;
+margin-bottom:30px;
 }
 
-.spec{
+.rooms{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
 background:white;
-padding:30px;
 border-radius:12px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-margin-top:30px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+transition:0.4s;
+opacity:0;
+transform:translateY(40px);
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
 }
 
 .btn{
 display:inline-block;
-margin-top:30px;
-padding:15px 40px;
+margin-top:20px;
+padding:12px 30px;
 background:#6b4f3f;
 color:white;
 text-decoration:none;
-border-radius:8px;
+border-radius:6px;
 transition:0.3s;
 }
 
