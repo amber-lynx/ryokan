@@ -4,65 +4,95 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>静寂の宿 さくら庵</title>
-
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <header>
-    <div class="header-inner">
-        <h1>静寂の宿 さくら庵</h1>
-        <nav>
-            <a href="#rooms">客室</a>
-            <a href="reservation.html" class="btn">ご予約</a>
-        </nav>
-    </div>
+<h1>静寂の宿 さくら庵</h1>
+<p>時を忘れる、やすらぎのひととき</p>
 </header>
 
-<section class="hero">
-    <div class="hero-text">
-        <h2>四季を感じる、癒しのひととき</h2>
-        <p>心安らぐ和の空間で、特別な時間を。</p>
-        <a href="reservation.html" class="hero-btn">ご予約はこちら</a>
-    </div>
-</section>
+<div class="hero" style="background-image:url('images/hero.jpg');"></div>
 
-<section class="rooms" id="rooms">
-    <h2>客室のご案内</h2>
+<div class="section">
+<h2>客室一覧</h2>
 
-    <div class="room-container">
+<div class="rooms">
 
-        <div class="room-card">
-            <img src="images/washitsu.jpg" alt="春の間">
-            <div class="room-info">
-                <h3>春の間</h3>
-                <p>やわらかな光が差し込む和室。定員2〜4名様。</p>
-            </div>
-        </div>
+<div class="card">
+<img src="images/spring.jpg">
+<div class="card-content">
+<h3>春の間</h3>
+<p>やわらかな朝の光に包まれる空間</p>
+<a href="spring.html" class="btn">詳細を見る</a>
+</div>
+</div>
 
-        <div class="room-card">
-            <img src="images/special.jpg" alt="記憶の間">
-            <div class="room-info">
-                <h3>記憶の間（特別室）</h3>
-                <p>専用露天風呂付きの特別なお部屋。</p>
-            </div>
-        </div>
+<div class="card">
+<img src="images/moon.jpg">
+<div class="card-content">
+<h3>月影の間</h3>
+<p>月明かりに包まれる静寂</p>
+<a href="moon.html" class="btn">詳細を見る</a>
+</div>
+</div>
 
-        <div class="room-card">
-            <img src="images/moon.jpg" alt="月影の間">
-            <div class="room-info">
-                <h3>月影の間</h3>
-                <p>落ち着いた照明と静かな空間。</p>
-            </div>
-        </div>
+<div class="card">
+<img src="images/midori.jpg">
+<div class="card-content">
+<h3>翠の間</h3>
+<p>庭の翠を望む開放的な客室</p>
+<a href="midori.html" class="btn">詳細を見る</a>
+</div>
+</div>
 
-    </div>
-</section>
+<div class="card">
+<img src="images/yoiyami.jpg">
+<div class="card-content">
+<h3>宵闇の間</h3>
+<p>落ち着きある大人の空間</p>
+<a href="yoiyami.html" class="btn">詳細を見る</a>
+</div>
+</div>
+
+<div class="card">
+<img src="images/kioku.jpg">
+<div class="card-content">
+<h3>記憶の間</h3>
+<p>露天風呂付き特別室</p>
+<a href="kioku.html" class="btn">詳細を見る</a>
+</div>
+</div>
+
+<div class="card">
+<img src="images/sakura.jpg">
+<div class="card-content">
+<h3>桜灯の間</h3>
+<p>幻想的な桜の夜</p>
+<a href="sakura.html" class="btn">詳細を見る</a>
+</div>
+</div>
+
+</div>
+</div>
 
 <footer>
-    <p>© 2026 静寂の宿 さくら庵 All Rights Reserved.</p>
+© 2026 静寂の宿 さくら庵
 </footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll',()=>{
+cards.forEach(card=>{
+const top = card.getBoundingClientRect().top;
+if(top < window.innerHeight - 100){
+card.classList.add('show');
+}
+});
+});
+</script>
 
 </body>
 </html>
