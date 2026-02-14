@@ -94,3 +94,40 @@ text-align:center;
 padding:20px;
 margin-top:60px;
 }
+
+.rooms {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  flex: 1 1 280px;
+  max-width: 300px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .rooms {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .card {
+    max-width: 90%;
+  }
+}
+
+.hero {
+  height: 60vh;
+  min-height: 400px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
